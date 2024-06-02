@@ -11,13 +11,13 @@ const EmptyCard = () => {
                 className='max-h-[40vh] w-full object-contain' 
             />
 
-            <p className='mt-6 text-[40px] text-center bg-green-200'>Notes are Empty.</p>
+            <p className='mt-6 text-[40px] text-center bg-green-200'>Notes are Empty. Click on add button and start creating your note!</p>
         </div>
 
-        <p className='float-right p-2 mt-[180px] text-[30px]'>
-            <span className='bg-black text-white p-5'>Click here and start creating your note!</span> 
+        {/* <p className='float-right p-2 mt-[180px] text-[30px]'>
+            <span className='bg-black text-white p-5'></span> 
         <IoReturnDownForwardSharp className='w-20 h-20 float-right mt-10 ms-[-50px]' />
-        </p>
+        </p> */}
         
     </div>
   );
