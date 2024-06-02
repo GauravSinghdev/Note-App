@@ -13,12 +13,25 @@ const NoteCard = ({
     onDelete, 
     onPinNote,
 }) => {
+
+    const borderColors = [
+        'border-red-400', 
+        'border-green-400', 
+        'border-blue-400', 
+        'border-yellow-400', 
+        'border-purple-400',
+        'border-pink-400',
+        'border-orange-400'
+    ];
+
+    const randomBorderColor = borderColors[Math.floor(Math.random() * borderColors.length)];
+
   return (
-    <div className='border-4 rounded-tl-[15px] rounded-br-[15px] h-[150px] p-4 hover:shadow-xl transition-all ease-in-out border-gray-400'>
+    <div className={`border-4 ${randomBorderColor} rounded-tl-[15px] rounded-br-[15px] h-[140px] p-4 hover:shadow-xl transition-all ease-in-out overflow-hidden`}>
         <div className='flex items-center justify-between'>
-            <div>
-                <h6 className='text-md font-semibold'>{title}</h6>
-                <span className='text-xs text-slate-500'>{moment(date).format('Do MMM YYYY, h:mm:ss a')}</span>
+            <div className='flex gap-2'>
+                <h6 className='text-[20px] font-semibold'>{title}</h6>
+                <span className='text-[12px] text-slate-500'>{moment(date).format('Do MMM YYYY')}</span>
             </div>
 
             <MdOutlinePushPin 
@@ -27,12 +40,12 @@ const NoteCard = ({
             />
         </div>
 
-        <p className='text-xs text-slate-600 mt-2'>{content?.slice(0,60)}</p>
+        <p className='text-[16px] text-slate-600 mt-2'>{content?.slice(0,60)}</p>
 
         <div className='flex items-center justify-between mt-2'>
-            <div className='text-xs text-slate-500'>{tags.map( (tag) => `#${tag} `)}</div>
+            <div className='text-[12px] text-slate-500 mt-3'>{tags.map( (tag) => `#${tag} `)}</div>
 
-            <div className='flex items-center gap-2'>
+            <div className='flex items-center gap-2 mt-4'>
                 <MdCreate
                     className='icon-btn hover:text-green-600'
                     onClick={onEdit}

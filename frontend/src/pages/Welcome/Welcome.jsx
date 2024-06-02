@@ -1,20 +1,3 @@
-// import React from 'react'
-// import { Link } from 'react-router-dom'
-
-
-// function Welcome() {
-//   return (
-//     <div className='flex gap-10'>
-//       <div>Welcome</div>
-//       <Link to="/login">Login</Link>
-//       <Link to="/signup">Signup</Link>
-//     </div>
-    
-//   )
-// }
-
-// export default Welcome
-
 import React from 'react'
 import { Link } from 'react-router-dom'
 
@@ -24,7 +7,7 @@ const Welcome = () => {
       <div className='flex items-center'>
         <div className='w-5/6 mx-[40px]'>
         <h1 className='text-[50px] font-bold text-white  pt-[20px]'>Welcome to our website . . .</h1>
-        <p className='text-white text-[20px] mt-[30px]'>We help to revise and prep your knowledge regarding programming languages.</p>
+        <p className='text-white text-[20px] mt-[30px]'>NoteMaster - Your Ultimate Note-Taking Companion</p>
 
 
         <Link to="/signup">

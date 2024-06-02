@@ -57,7 +57,7 @@ const Login = () => {
         }
     };
   return (
-    <>
+    <div>
         {/* <Navbar/> */}
 
 
@@ -90,7 +90,7 @@ const Login = () => {
                 </form>
             </div>
         </div>
-    </>
+    </div>
     
   )
 }

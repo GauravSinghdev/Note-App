@@ -145,7 +145,7 @@ const updateIsPinned = async (noteData) => {
 
       <div className="container mx-auto">
         {allNotes.length > 0 ?
-          <div className='grid grid-cols-3 gap-10 mt-20'>
+          <div className='grid grid-cols-4 gap-10 mt-20'>
           {allNotes.map((item) => (
             <NoteCard
               key={item._id}
@@ -164,7 +164,7 @@ const updateIsPinned = async (noteData) => {
       </div>
 
       <button
-        className='w-16 h-16 flex items-center justify-center rounded-[50%] bg-primary hover:bg-blue-700 absolute right-10 bottom-10'
+        className='w-16 h-16 flex items-center justify-center rounded-[50%] bg-primary hover:bg-blue-700 absolute right-20 bottom-10 animate-bounce'
         onClick={() => {
           setOpenEditModal({ isShown: true, type: "add", data: null });
         }}>
