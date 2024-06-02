@@ -58,7 +58,7 @@ const Login = () => {
     };
   return (
     <>
-        <Navbar/>
+        {/* <Navbar/> */}
 
 
         <div className='flex items-center justify-center mt-28'>
