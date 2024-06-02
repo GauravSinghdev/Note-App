@@ -1,0 +1,33 @@
+import React from 'react'
+
+import { BrowserRouter as 
+  Router, 
+  Routes, 
+  Route,
+} from 'react-router-dom'
+
+import Home from './pages/Home/Home'
+import Login from './pages/Login/Login'
+import Signup from './pages/Signup/Signup'
+import Welcome from './pages/Welcome/Welcome'
+
+const routes = (
+  <Router>
+    <Routes>
+      <Route path='/' exact element={<Welcome/>}></Route>
+      <Route path='/dashboard' exact element={<Home/>}></Route>
+      <Route path='/login' exact element={<Login/>}></Route>
+      <Route path='/signup' exact element={<Signup/>}></Route>
+    </Routes>
+  </Router>
+)
+
+function App() {
+  return (
+    <div>
+      {routes}
+    </div>
+  )
+}
+
+export default App
