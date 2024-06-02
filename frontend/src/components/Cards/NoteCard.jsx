@@ -40,7 +40,7 @@ const NoteCard = ({
             />
         </div>
 
-        <p className='text-[16px] text-slate-600 mt-2'>{content?.slice(0,60)}</p>
+        <p className='text-[16px] text-slate-600 mt-3'>{content?.slice(0,40)}</p>
 
         <div className='flex items-center justify-between mt-2'>
             <div className='text-[12px] text-slate-500 mt-3'>{tags.map( (tag) => `#${tag} `)}</div>
