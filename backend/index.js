@@ -23,6 +23,11 @@ app.use(
     })
 );
 
+app.get("/", (req, res) => {
+    return res.json({
+        message: "hey there",
+    });
+})
 //Create Account
 app.post("/create-account", async (req,res) => {
     const {fullName, email, password} = req.body;
