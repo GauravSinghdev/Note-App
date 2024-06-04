@@ -73,7 +73,7 @@ const Signup = () => {
     <>
         {/* <Navbar/> */}
 
-        <div className='flex items-center justify-center mt-[200px]'>
+        <div className="relative min-h-screen flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: "url('https://cdn.pixabay.com/photo/2016/12/18/12/49/cyber-security-1915626_1280.png')" }}>
             <div className='w-96 border-[2px] rounded-[20px] bg-white px-7 py-10 shadow-xl'> 
                 <form onSubmit={handleSignUp}>
                     <h4 className='text-3xl font-semibold text-center mb-7'>Signup</h4>

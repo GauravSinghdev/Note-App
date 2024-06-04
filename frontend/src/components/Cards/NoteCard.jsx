@@ -27,7 +27,7 @@ const NoteCard = ({
     const randomBorderColor = borderColors[Math.floor(Math.random() * borderColors.length)];
 
   return (
-    <div className={`border-4 ${randomBorderColor} rounded-bl-[15px] rounded-tr-[15px] h-[140px] p-4 hover:shadow-xl transition-all ease-in-out overflow-hidden`}>
+    <div className={`border-4 ${randomBorderColor} rounded h-[140px] p-4 hover:shadow-xl transition-all ease-in-out overflow-hidden`}>
         <div className='flex items-center justify-between'>
             <div className='flex gap-2'>
                 <h6 className='text-[20px] font-semibold'>{title}</h6>

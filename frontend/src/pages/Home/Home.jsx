@@ -10,7 +10,6 @@ import Toast from '../../components/ToastMessage/Toast';
 import EmptyCard from '../../components/EmptyCard/EmptyCard';
 import NoSearchResultsCard from '../../components/EmptyCard/NoSearchResultsCard';
 
-
 const Home = () => {
 
   const [openAddEditModal, setOpenEditModal] = useState({
@@ -145,30 +144,10 @@ const updateIsPinned = async (noteData) => {
     <>
       <Navbar userInfo={userInfo} onSearchNote={onSearchNote} handleClearSearch={handleClearSearch} />
 
-      {/* <div className="container mx-auto">
-        {allNotes.length > 0 ?
-          <div className='grid grid-cols-4 gap-10 mt-20'>
-          {allNotes.map((item) => (
-            <NoteCard
-              key={item._id}
-              title={item.title}
-              date={item.createdOn}
-              content={item.content}
-              tags={item.tags}
-              isPinned={item.isPinned}
-              onEdit={() => handleEdit(item)}
-              onDelete={() => deleteNote(item)}
-              onPinNote={() => updateIsPinned(item)}
-            />
-          ))}
-        </div> : <EmptyCard/>
-        }
-      </div> */}
-
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {isSearch ? (
           allNotes.length > 0 ? (
-            <div className='grid grid-cols-4 gap-10 mt-20'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-10'>
               {allNotes.map((item) => (
                 <NoteCard
                   key={item._id}
@@ -188,7 +167,7 @@ const updateIsPinned = async (noteData) => {
           )
         ) : (
           allNotes.length > 0 ? (
-            <div className='grid grid-cols-4 gap-10 mt-20'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-10'>
               {allNotes.map((item) => (
                 <NoteCard
                   key={item._id}
@@ -210,11 +189,11 @@ const updateIsPinned = async (noteData) => {
       </div>
 
       <button
-        className='w-16 h-16 flex items-center justify-center rounded-[50%] bg-primary hover:bg-blue-700 absolute right-20 bottom-10 animate-bounce'
+        className='w-16 h-16 flex items-center justify-center rounded-full bg-primary hover:bg-blue-700 fixed right-4 bottom-4 sm:right-6 sm:bottom-6 md:right-8 md:bottom-8 lg:right-10 lg:bottom-10 animate-bounce'
         onClick={() => {
           setOpenEditModal({ isShown: true, type: "add", data: null });
         }}>
-        <MdAdd className='text-[32px] text-white' />
+        <MdAdd className='text-2xl text-white' />
       </button>
 
       <Modal
@@ -226,7 +205,7 @@ const updateIsPinned = async (noteData) => {
           },
         }}
         contentLabel=""
-        className="w-[40%] max-h-3/4 bg-white rounded-md mx-auto mt-[70px] p-5"
+        className="w-full max-w-lg max-h-3/4 bg-white rounded-md mx-auto mt-20 p-5"
       >
 
         <AddEditNotes
