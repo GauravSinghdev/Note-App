@@ -8,6 +8,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import axiosInstance from '../../utils/axiosInstance';
 import Toast from '../../components/ToastMessage/Toast';
 import EmptyCard from '../../components/EmptyCard/EmptyCard';
+import NoSearchResultsCard from '../../components/EmptyCard/NoSearchResultsCard';
+
 
 const Home = () => {
 
@@ -143,7 +145,7 @@ const updateIsPinned = async (noteData) => {
     <>
       <Navbar userInfo={userInfo} onSearchNote={onSearchNote} handleClearSearch={handleClearSearch} />
 
-      <div className="container mx-auto">
+      {/* <div className="container mx-auto">
         {allNotes.length > 0 ?
           <div className='grid grid-cols-4 gap-10 mt-20'>
           {allNotes.map((item) => (
@@ -161,6 +163,50 @@ const updateIsPinned = async (noteData) => {
           ))}
         </div> : <EmptyCard/>
         }
+      </div> */}
+
+      <div className="container mx-auto">
+        {isSearch ? (
+          allNotes.length > 0 ? (
+            <div className='grid grid-cols-4 gap-10 mt-20'>
+              {allNotes.map((item) => (
+                <NoteCard
+                  key={item._id}
+                  title={item.title}
+                  date={item.createdOn}
+                  content={item.content}
+                  tags={item.tags}
+                  isPinned={item.isPinned}
+                  onEdit={() => handleEdit(item)}
+                  onDelete={() => deleteNote(item)}
+                  onPinNote={() => updateIsPinned(item)}
+                />
+              ))}
+            </div>
+          ) : (
+            <NoSearchResultsCard />
+          )
+        ) : (
+          allNotes.length > 0 ? (
+            <div className='grid grid-cols-4 gap-10 mt-20'>
+              {allNotes.map((item) => (
+                <NoteCard
+                  key={item._id}
+                  title={item.title}
+                  date={item.createdOn}
+                  content={item.content}
+                  tags={item.tags}
+                  isPinned={item.isPinned}
+                  onEdit={() => handleEdit(item)}
+                  onDelete={() => deleteNote(item)}
+                  onPinNote={() => updateIsPinned(item)}
+                />
+              ))}
+            </div>
+          ) : (
+            <EmptyCard />
+          )
+        )}
       </div>
 
       <button
