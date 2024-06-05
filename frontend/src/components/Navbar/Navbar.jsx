@@ -26,10 +26,10 @@ const Navbar = ({ userInfo, onSearchNote, handleClearSearch }) => {
         handleClearSearch();
     }
     return(
-        <div className='bg-white flex items-center justify-between px-6 py-2 drop-shadow-md'>
+        <div className='bg-white flex items-center justify-between px-6 py-2 drop-shadow-md gap-3'>
 
             <a href="/dashboard">
-                <h2 className='text-xl font-medium text-black py-2 ps-5'>NoteMaster</h2>
+                <h2 className='text-xl font-medium text-black py-2'>NoteMaster</h2>
             </a>
             
             <SearchBar 
