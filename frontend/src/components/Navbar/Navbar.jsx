@@ -29,7 +29,7 @@ const Navbar = ({ userInfo, onSearchNote, handleClearSearch }) => {
         <div className='bg-white flex items-center justify-between px-6 py-2 drop-shadow-md'>
 
             <a href="/dashboard">
-                <h2 className='text-xl font-medium text-black py-2'>NoteMaster</h2>
+                <h2 className='text-xl font-medium text-black py-2 ps-5'>NoteMaster</h2>
             </a>
             
             <SearchBar 
@@ -39,7 +39,8 @@ const Navbar = ({ userInfo, onSearchNote, handleClearSearch }) => {
             }}
             handleSearch ={handleSearch}
             onClearSearch={onClearSearch}/>
-            
+
+           
             <ProfileInfo userInfo = {userInfo} onLogout={onLogout}/>
         </div>
     );
